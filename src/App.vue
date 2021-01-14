@@ -18,13 +18,16 @@
         <span class="mr-2">Login</span>
         <v-icon>mdi-account</v-icon>
       </v-btn>
-      <v-btn v-if='getuser'
+
+      <!-- <v-btn v-if='getuser'
         text
         @click="logout"
       >
         <span class="mr-2">Logout</span>
-        <v-icon>mdi-logout</v-icon>
-      </v-btn>
+        
+      </v-btn> -->
+
+      <DialogOff v-if="getuser"/>
     </v-app-bar>
 
     <v-main>
@@ -36,6 +39,7 @@
 
 <script>
 // import HelloWorld from './components/HelloWorld';
+import DialogOff from "./components/DialogOff";
 
 export default {
   name: 'App',
@@ -49,18 +53,10 @@ export default {
   },
   components: {
     // HelloWorld,
+    DialogOff
   },
   methods: {
-    logout(){
-      if (this.$route.name !== 'Home') {
-        localStorage.removeItem('user');
-        this.$store.commit('admin/setUser', '');
-        this.$router.push('/');
-      } else {
-        localStorage.removeItem('user');
-        this.$store.commit('admin/setUser', '');
-      }
-    }
+    
   },
   data: () => ({
     //
