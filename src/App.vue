@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar
+    <v-app-bar v-if='!loginPage'
       app
       color="primary"
       dark
@@ -42,6 +42,9 @@ export default {
   computed: {
     getuser(){
       return this.$store.state.admin.user;
+    },
+    loginPage(){
+      return this.$route.name === 'Login'
     }
   },
   components: {

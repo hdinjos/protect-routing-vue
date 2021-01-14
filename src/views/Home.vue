@@ -12,6 +12,11 @@ export default {
   name: 'Home',
   components: {
     HelloWorld
+  },
+  created(){
+    const user = localStorage.getItem('user');
+    this.$store.commit('admin/setUser', user);
+    console.log(this.$store.state.user);
   }
 }
 </script>
