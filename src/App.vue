@@ -60,12 +60,14 @@ export default {
         localStorage.removeItem('user');
         this.$store.commit('admin/setUser', '');
       }
-      console.log(this.$store.state.admin.user);
-      console.log(this.$route.name);
     }
   },
   data: () => ({
     //
   }),
+    created(){
+    const user = JSON.parse(localStorage.getItem('user'));
+    this.$store.commit('admin/setUser', user);
+  }
 };
 </script>

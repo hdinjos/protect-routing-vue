@@ -1,14 +1,14 @@
 <template>
-  <h1>This Home Page {{ $store.state.admin.user }}</h1>
-</template>
+  <div>
+  <h1>This Home Page Admin</h1>
+  <h2>username: {{ $store.state.admin.user.username }}</h2>
+  <h2>password(random enkripsi): {{ Math.floor(Math.random($store.state.admin.user.password) * 1000000) }}</h2>
+  </div>
+</template> 
 
 <script>
 export default {
-  created() {
-    const user = localStorage.getItem("user");
-    this.$store.commit("admin/setUser", user);
-    console.log(this.$store.state.user);
-  },
+
 };
 </script>
 
