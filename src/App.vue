@@ -26,6 +26,7 @@
         <span class="mr-2">Logout</span>
         
       </v-btn> -->
+      <Menu />
 
       <DialogOff v-if="getuser"/>
     </v-app-bar>
@@ -40,6 +41,7 @@
 <script>
 // import HelloWorld from './components/HelloWorld';
 import DialogOff from "./components/DialogOff";
+import Menu from './components/Menu';
 
 export default {
   name: 'App',
@@ -53,7 +55,7 @@ export default {
   },
   components: {
     // HelloWorld,
-    DialogOff
+    DialogOff, Menu
   },
   methods: {
     
