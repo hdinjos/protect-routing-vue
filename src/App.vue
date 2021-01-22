@@ -1,20 +1,13 @@
 <template>
   <v-app>
-    <v-app-bar v-if='!loginPage'
-      app
-      color="primary"
-      dark
-    >
-    <router-link to="/">
-      <h1 class="white--text">Login bosq</h1>
-    </router-link>
+    <v-app-bar v-if="!loginPage" app color="red accent-2" dark>
+      <router-link class="text-decoration-none" to="/">
+        <h1 class="white--text">Check&Up</h1>
+      </router-link>
 
       <v-spacer></v-spacer>
 
-      <v-btn v-if='!getuser'
-        text
-        link to="/login"
-      >
+      <v-btn v-if="!getuser" text link to="/login">
         <span class="mr-2">Login</span>
         <v-icon>mdi-account</v-icon>
       </v-btn>
@@ -28,11 +21,11 @@
       </v-btn> -->
       <Menu />
 
-      <DialogOff v-if="getuser"/>
+      <DialogOff v-if="getuser" />
     </v-app-bar>
 
     <v-main>
-      <router-view/>
+      <router-view />
       <!-- <HelloWorld/> -->
     </v-main>
   </v-app>
@@ -41,31 +34,30 @@
 <script>
 // import HelloWorld from './components/HelloWorld';
 import DialogOff from "./components/DialogOff";
-import Menu from './components/Menu';
+import Menu from "./components/Menu";
 
 export default {
-  name: 'App',
+  name: "App",
   computed: {
-    getuser(){
+    getuser() {
       return this.$store.state.admin.user;
     },
-    loginPage(){
-      return this.$route.name === 'Login'
-    }
+    loginPage() {
+      return this.$route.name === "Login";
+    },
   },
   components: {
     // HelloWorld,
-    DialogOff, Menu
+    DialogOff,
+    Menu,
   },
-  methods: {
-    
-  },
+  methods: {},
   data: () => ({
     //
   }),
-    created(){
-    const user = JSON.parse(localStorage.getItem('user'));
-    this.$store.commit('admin/setUser', user);
-  }
+  created() {
+    const user = JSON.parse(localStorage.getItem("user"));
+    this.$store.commit("admin/setUser", user);
+  },
 };
 </script>

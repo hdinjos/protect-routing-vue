@@ -7,14 +7,14 @@
           dark
           v-bind="attrs"
           v-on="on"
-          class="primary--text"
+          style="color: #FF5252"
         >
-          Dropdown
+          Menu
         </v-btn>
       </template>
       <v-list>
-        <v-list-item v-for="(item, index) in items" :key="index">
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
+        <v-list-item link to="/location">
+          <v-list-item-title>Location</v-list-item-title>
         </v-list-item>
       </v-list>
     </v-menu>
@@ -22,16 +22,7 @@
 </template>
 
 <script>
-export default {
-  data: () => ({
-    items: [
-      { title: "Click Me" },
-      { title: "Click Me" },
-      { title: "Click Me" },
-      { title: "Click Me 2" },
-    ],
-  }),
-};
+export default {};
 </script>
 
 <style></style>

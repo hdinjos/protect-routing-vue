@@ -31,6 +31,11 @@ const routes = [
       requiresAuth:true
     }
 
+  },
+  {
+    path: '/location',
+    name: 'Location',
+    component: () => import(/*webpackChunkName: "location" */ '../views/Location.vue')
   }
 ]
 
