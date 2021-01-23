@@ -36,6 +36,11 @@ const routes = [
     path: '/location',
     name: 'Location',
     component: () => import(/*webpackChunkName: "location" */ '../views/Location.vue')
+  },
+  {
+    path: '/observable',
+    name: 'Observable',
+    component: () => import(/*webpackChunkName: "observable" */ '../views/Observable.vue')
   }
 ]
 

@@ -16,6 +16,9 @@
         <v-list-item link to="/location">
           <v-list-item-title>Location</v-list-item-title>
         </v-list-item>
+        <v-list-item link to="/observable">
+          <v-list-item-title>Observable</v-list-item-title>
+        </v-list-item>
       </v-list>
     </v-menu>
   </div>
